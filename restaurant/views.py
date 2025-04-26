@@ -65,4 +65,5 @@ def bookings(request):
     date = request.GET.get('date',datetime.today().date())
     bookings = Booking.objects.all().filter(reservation_date=date)
     booking_json = serializers.serialize('json', bookings)
+
     return HttpResponse(booking_json, content_type='application/json')

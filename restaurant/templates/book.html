@@ -68,14 +68,14 @@
         reserved_slots = [];
         bookings = "";
 
-        for (item in data) {
-          console.log(item.fields);
+        data.forEach((item) => {
+          console.log(item);
           reserved_slots.push(item.fields.reservation_slot);
 
           bookings += `<p>${item.fields.first_name} - ${formatTime(
             item.fields.reservation_slot
           )}</p>`;
-        }
+        });
 
         slot_options = '<option value="0" disabled>Select time</option>';
 
